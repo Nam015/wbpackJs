@@ -7,4 +7,19 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "output.js",
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+    ],
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    compress: true,
+    port: 3500,
+  },
 };
